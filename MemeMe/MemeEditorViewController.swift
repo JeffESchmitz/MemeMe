@@ -64,6 +64,24 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
 		self.presentViewController(imagePickerController, animated: true, completion: nil)
 	}
+    
+    @IBAction func shareMeme(sender: AnyObject) {
+        
+        let memeImage = generateMemedImage()
+        
+        let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = {
+            (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError:NSError?) -> Void in
+            if completed {
+                self.save(memeImage)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+       
+        self.presentViewController(activityController, animated: true, completion: nil)
+    }
+    
 
 	// MARK: UIImagePickerControllerDelegate methods
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -138,7 +156,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            self.view.frame.origin.y = 0
         }
 	}
     

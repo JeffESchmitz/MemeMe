@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Meme Editor View Controller-->
@@ -47,7 +48,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="ClQ-44-sfn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ClQ-44-sfn">
                                 <rect key="frame" x="180" y="151" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="0hi-oK-lMU"/>
@@ -66,16 +67,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IE-Nr-7O9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="bJG-3m-TYV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="6pa-2q-rfb">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="XeJ-Jz-iFE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8IE-Nr-7O9" secondAttribute="trailing" constant="-20" id="0Gm-Fp-4kT"/>
                             <constraint firstItem="QTd-ac-xDs" firstAttribute="top" secondItem="ClQ-44-sfn" secondAttribute="bottom" constant="74" id="0WR-KH-h7D"/>
                             <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="Va9-fI-Yeu" secondAttribute="centerX" id="0ic-PI-rLn"/>
                             <constraint firstItem="qkA-MT-YkR" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3nz-eJ-Ubo"/>
                             <constraint firstItem="qkA-MT-YkR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FlB-a6-2MM"/>
+                            <constraint firstItem="8IE-Nr-7O9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Vby-Ww-HqF"/>
+                            <constraint firstItem="8IE-Nr-7O9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ZhZ-9V-3Sg"/>
                             <constraint firstItem="ClQ-44-sfn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="151" id="a8S-il-ffX"/>
                             <constraint firstAttribute="trailing" secondItem="qkA-MT-YkR" secondAttribute="trailing" id="giW-rv-1EK"/>
                             <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="qkA-MT-YkR" secondAttribute="centerX" id="hi9-6a-3hs"/>
+                            <constraint firstItem="Va9-fI-Yeu" firstAttribute="top" secondItem="8IE-Nr-7O9" secondAttribute="bottom" constant="15" id="jLJ-ka-HeJ"/>
                             <constraint firstItem="ClQ-44-sfn" firstAttribute="top" secondItem="Va9-fI-Yeu" secondAttribute="bottom" constant="62" id="nqE-YK-bg5"/>
                             <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="QTd-ac-xDs" secondAttribute="centerX" id="ow1-Xq-urD"/>
                         </constraints>
@@ -93,7 +110,4 @@
             <point key="canvasLocation" x="228" y="348"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LaunchImage" width="1536" height="2048"/>
-    </resources>
 </document>
