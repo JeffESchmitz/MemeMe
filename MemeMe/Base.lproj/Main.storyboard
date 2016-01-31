@@ -54,42 +54,38 @@
                                     <constraint firstAttribute="height" constant="240" id="5VU-yj-FOo"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCd-VS-PA4">
-                                <rect key="frame" x="252" y="68" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WYN-l1-qBG"/>
-                                    <constraint firstAttribute="width" constant="97" id="XAn-GJ-Rtk"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va9-fI-Yeu">
+                                <rect key="frame" x="252" y="59" width="97" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-ru-7E0">
-                                <rect key="frame" x="225" y="485" width="151" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="JgT-dq-Ifz"/>
-                                    <constraint firstAttribute="width" constant="151" id="wGr-0h-LGj"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTd-ac-xDs">
+                                <rect key="frame" x="252" y="465" width="97" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="QTd-ac-xDs" firstAttribute="top" secondItem="ClQ-44-sfn" secondAttribute="bottom" constant="74" id="0WR-KH-h7D"/>
+                            <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="Va9-fI-Yeu" secondAttribute="centerX" id="0ic-PI-rLn"/>
                             <constraint firstItem="qkA-MT-YkR" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3nz-eJ-Ubo"/>
-                            <constraint firstItem="kuP-ru-7E0" firstAttribute="centerX" secondItem="ClQ-44-sfn" secondAttribute="centerX" id="ApE-ZA-eqD"/>
-                            <constraint firstItem="TCd-VS-PA4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="BAb-zC-IaC"/>
                             <constraint firstItem="qkA-MT-YkR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FlB-a6-2MM"/>
-                            <constraint firstItem="qkA-MT-YkR" firstAttribute="top" secondItem="kuP-ru-7E0" secondAttribute="bottom" constant="24" id="RHC-km-RNB"/>
-                            <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="TCd-VS-PA4" secondAttribute="centerX" id="Y0a-aG-riA"/>
+                            <constraint firstItem="ClQ-44-sfn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="151" id="a8S-il-ffX"/>
                             <constraint firstAttribute="trailing" secondItem="qkA-MT-YkR" secondAttribute="trailing" id="giW-rv-1EK"/>
-                            <constraint firstItem="kuP-ru-7E0" firstAttribute="centerX" secondItem="qkA-MT-YkR" secondAttribute="centerX" id="jQc-Ib-Xnr"/>
-                            <constraint firstItem="ClQ-44-sfn" firstAttribute="top" secondItem="TCd-VS-PA4" secondAttribute="bottom" constant="53" id="kXu-zC-Djy"/>
+                            <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="qkA-MT-YkR" secondAttribute="centerX" id="hi9-6a-3hs"/>
+                            <constraint firstItem="ClQ-44-sfn" firstAttribute="top" secondItem="Va9-fI-Yeu" secondAttribute="bottom" constant="62" id="nqE-YK-bg5"/>
+                            <constraint firstItem="ClQ-44-sfn" firstAttribute="centerX" secondItem="QTd-ac-xDs" secondAttribute="centerX" id="ow1-Xq-urD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="albumButton" destination="CFH-4Q-zgb" id="FkN-M8-AwT"/>
+                        <outlet property="bottomText" destination="QTd-ac-xDs" id="ncC-gI-9qU"/>
+                        <outlet property="cameraButton" destination="aQg-Of-O8e" id="b9P-m5-gvA"/>
                         <outlet property="imagePickerView" destination="ClQ-44-sfn" id="kUJ-Cn-9dr"/>
+                        <outlet property="topText" destination="Va9-fI-Yeu" id="Wfk-rQ-3m9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
