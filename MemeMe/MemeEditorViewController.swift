@@ -9,7 +9,8 @@
 import UIKit
 import Foundation
 
-class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate
+{
 
 	@IBOutlet weak var imagePickerView: UIImageView!
 	@IBOutlet weak var albumButton: UIBarButtonItem!
@@ -64,13 +65,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
 		self.presentViewController(imagePickerController, animated: true, completion: nil)
 	}
-    
+
     @IBAction func shareMeme(sender: AnyObject) {
-        
+
         let memeImage = generateMemedImage()
-        
+
         let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
-        
+
         activityController.completionWithItemsHandler = {
             (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError:NSError?) -> Void in
             if completed {
@@ -78,10 +79,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
-       
+
         self.presentViewController(activityController, animated: true, completion: nil)
     }
-    
 
 	// MARK: UIImagePickerControllerDelegate methods
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -92,7 +92,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 			self.dismissViewControllerAnimated(true, completion: nil)
 		}
 	}
-    
+
     func imagePickerControllerDidCancel(picker : UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion : nil)
     }
@@ -120,9 +120,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
 
-    
-
-    func subscribeToKeyboardNotifications() {
+	func subscribeToKeyboardNotifications() {
 		NSNotificationCenter
 			.defaultCenter()
 			.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -131,8 +129,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 			.defaultCenter()
 			.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 	}
-	
-    func unsubscribeFromKeyboardNotifications() {
+
+	func unsubscribeFromKeyboardNotifications() {
 		NSNotificationCenter
 			.defaultCenter()
 			.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
@@ -159,41 +157,39 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             self.view.frame.origin.y = 0
         }
 	}
-    
-    func save(memedImage: UIImage) {
-        let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: imagePickerView.image!, memedImage: memedImage)
-        
-        // Add it to the memes array in the Application Delegate
-        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
-    }
-    
-    func generateMemedImage() -> UIImage {
 
-        hideNavigationBars()
-        
-        // Take a snapshot of the screen's memedImage
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
-        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        showNavigationBars()
+	func save(memedImage: UIImage) {
+		let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: imagePickerView.image!, memedImage: memedImage)
 
-        return memedImage
-    }
- 
-    func showNavigationBars() {
-        toggleNavigationBarsVisibility(false)
-    }
+		// Add it to the memes array in the Application Delegate
+		(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+	}
 
-    func hideNavigationBars() {
-        toggleNavigationBarsVisibility(true)
-    }
-    
-    private func toggleNavigationBarsVisibility(visible: Bool) {
-        navigationController?.setNavigationBarHidden(visible, animated: true)
-        navigationController?.setToolbarHidden(visible, animated: true)
-    }
-    
+	func generateMemedImage() -> UIImage {
+
+		hideNavigationBars()
+
+		// Take a snapshot of the screen's memedImage
+		UIGraphicsBeginImageContext(self.view.frame.size)
+		self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+		let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+
+		showNavigationBars()
+
+		return memedImage
+	}
+
+	func showNavigationBars() {
+		toggleNavigationBarsVisibility(false)
+	}
+
+	func hideNavigationBars() {
+		toggleNavigationBarsVisibility(true)
+	}
+
+	private func toggleNavigationBarsVisibility(visible: Bool) {
+		navigationController?.setNavigationBarHidden(visible, animated: true)
+		navigationController?.setToolbarHidden(visible, animated: true)
+	}
 }
-
