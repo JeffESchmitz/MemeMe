@@ -159,7 +159,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	}
 
 	func save(memedImage: UIImage) {
-		let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: imagePickerView.image!, memedImage: memedImage)
+        
+        guard let pickerImage = imagePickerView.image else {
+            print("No picker image selected. Picker image view needs an image to save.")
+            return
+        }
+        
+		let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: pickerImage, memedImage: memedImage)
 
 		// Add it to the memes array in the Application Delegate
 		(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
