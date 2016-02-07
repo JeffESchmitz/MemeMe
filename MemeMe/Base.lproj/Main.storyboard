@@ -37,14 +37,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSo-FS-b3F">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Album" id="KO9-7p-4sl" userLabel="Album Button">
+                                    <barButtonItem systemItem="camera" id="KO9-7p-4sl" userLabel="Album Button">
                                         <connections>
-                                            <action selector="pickImageFromAlbum:" destination="mjZ-Pf-yck" id="8lB-LW-SV8"/>
+                                            <action selector="pickImageFromCamera:" destination="mjZ-Pf-yck" id="sbQ-j4-DbQ"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="lKb-dJ-ldG" userLabel="Camera Button">
+                                    <barButtonItem title="Album" id="lKb-dJ-ldG" userLabel="Camera Button">
                                         <connections>
-                                            <action selector="pickImageFromCamera:" destination="mjZ-Pf-yck" id="0Nm-aU-GID"/>
+                                            <action selector="pickImageFromAlbum:" destination="mjZ-Pf-yck" id="UPo-Tg-kG5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -94,9 +94,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="albumButton" destination="KO9-7p-4sl" id="TJO-XS-C5x"/>
+                        <outlet property="albumButton" destination="lKb-dJ-ldG" id="5n4-zo-X83"/>
                         <outlet property="bottomText" destination="Hbo-ZB-1xq" id="Ifv-lw-eKF"/>
-                        <outlet property="cameraButton" destination="lKb-dJ-ldG" id="bXS-3q-RO7"/>
+                        <outlet property="cameraButton" destination="KO9-7p-4sl" id="CpB-kv-54h"/>
                         <outlet property="imagePickerView" destination="Gox-Vb-2Dw" id="xz0-8J-Wks"/>
                         <outlet property="topText" destination="azC-x4-PgD" id="S5i-AT-SsL"/>
                     </connections>
