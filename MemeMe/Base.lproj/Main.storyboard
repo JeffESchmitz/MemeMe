@@ -95,12 +95,19 @@
                                 <action selector="shareMeme:" destination="mjZ-Pf-yck" id="4Fy-j2-K0H"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QFt-Um-ahl">
+                            <connections>
+                                <action selector="cancelMeme:" destination="mjZ-Pf-yck" id="ChH-mt-VK6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="albumButton" destination="lKb-dJ-ldG" id="5n4-zo-X83"/>
                         <outlet property="bottomText" destination="Hbo-ZB-1xq" id="Ifv-lw-eKF"/>
                         <outlet property="cameraButton" destination="KO9-7p-4sl" id="CpB-kv-54h"/>
+                        <outlet property="cancelButton" destination="QFt-Um-ahl" id="ZfB-lS-ew2"/>
                         <outlet property="imagePickerView" destination="Gox-Vb-2Dw" id="xz0-8J-Wks"/>
+                        <outlet property="shareButton" destination="EU7-Ch-PUy" id="Mox-OP-7Lh"/>
                         <outlet property="topText" destination="azC-x4-PgD" id="S5i-AT-SsL"/>
                     </connections>
                 </viewController>
