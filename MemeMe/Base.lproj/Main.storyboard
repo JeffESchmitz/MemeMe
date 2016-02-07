@@ -37,16 +37,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSo-FS-b3F">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wx0-lJ-llv"/>
                                     <barButtonItem systemItem="camera" id="KO9-7p-4sl" userLabel="Album Button">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="mjZ-Pf-yck" id="sbQ-j4-DbQ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ql9-1v-DJp"/>
                                     <barButtonItem title="Album" id="lKb-dJ-ldG" userLabel="Camera Button">
                                         <connections>
                                             <action selector="pickImageFromAlbum:" destination="mjZ-Pf-yck" id="UPo-Tg-kG5"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zMB-PB-26V"/>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-Vb-2Dw">
