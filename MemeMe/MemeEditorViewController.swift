@@ -127,10 +127,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             switch textField.tag {
             case 1:
                 textField.text = "TOP"
-                break;
+                break
             case 2:
                 textField.text = "BOTTOM"
-                break;
+                break
             default:
                 break
             }
