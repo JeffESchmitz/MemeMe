@@ -100,7 +100,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
 	// MARK: UIImagePickerControllerDelegate methods
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-
 		// Conditionally unwrapping the info dictionary
 		if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 			imagePickerView.image = image
@@ -188,7 +187,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	}
 
 	func save(memedImage: UIImage) {
-
 		guard let pickerImage = imagePickerView.image else {
 			print("No picker image selected. Picker image view needs an image to save.")
 			return
@@ -201,7 +199,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	}
 
 	func generateMemedImage() -> UIImage {
-
 		hideNavigationBars()
 
 		// Take a snapshot of the screen's memedImage
