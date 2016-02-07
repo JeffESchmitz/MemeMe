@@ -38,13 +38,13 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Wx0-lJ-llv"/>
-                                    <barButtonItem systemItem="camera" id="KO9-7p-4sl" userLabel="Album Button">
+                                    <barButtonItem systemItem="camera" id="KO9-7p-4sl" userLabel="Camera Button">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="mjZ-Pf-yck" id="sbQ-j4-DbQ"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ql9-1v-DJp"/>
-                                    <barButtonItem title="Album" id="lKb-dJ-ldG" userLabel="Camera Button">
+                                    <barButtonItem title="Album" id="lKb-dJ-ldG" userLabel="Album Button">
                                         <connections>
                                             <action selector="pickImageFromAlbum:" destination="mjZ-Pf-yck" id="UPo-Tg-kG5"/>
                                         </connections>
@@ -59,13 +59,13 @@
                                 <rect key="frame" x="0.0" y="100" width="600" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-ZB-1xq" userLabel="Bottom Text Field">
                                 <rect key="frame" x="0.0" y="476" width="600" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
