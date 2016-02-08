@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChooseFontViewProtocol
 {
 
 	@IBOutlet weak var imagePickerView: UIImageView!
@@ -56,7 +56,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		super.viewWillDisappear(animated)
 		self.unsubscribeFromKeyboardNotifications()
 	}
-
+    
 	@IBAction func pickImageFromAlbum(sender: AnyObject) {
 		let imagePickerController = UIImagePickerController()
 		imagePickerController.delegate = self
@@ -224,4 +224,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		navigationController?.setNavigationBarHidden(visible, animated: true)
 		navigationController?.setToolbarHidden(visible, animated: true)
 	}
+    
+    // MARK: ChooseFontViewProtocol delegate method
+    func selectedFont(font: String) {
+        topText.font = UIFont(name: font, size: 40)
+        bottomText.font = UIFont(name: font, size: 40)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let chooseFontController = segue.destinationViewController as! ChooseFontViewController
+        chooseFontController.chooseFontViewDelegate = self
+    }
+    
 }
