@@ -31,13 +31,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-        setTextFieldProperties(topText, attributes: memeTextAttributes, displayText: "TOP")
-        setTextFieldProperties(bottomText, attributes: memeTextAttributes, displayText: "BOTTOM")
+        setTextFieldProperties(topText, displayText: "TOP")
+        setTextFieldProperties(bottomText, displayText: "BOTTOM")
     }
 
-    func setTextFieldProperties(textField: UITextField!, attributes: [String : AnyObject], displayText: String?) {
+    func setTextFieldProperties(textField: UITextField!, displayText: String?) {
         textField.delegate = self
-        textField.defaultTextAttributes = attributes
+        textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .Center
         textField.text = displayText
     }
@@ -58,16 +58,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	}
     
 	@IBAction func pickImageFromAlbum(sender: AnyObject) {
-		let imagePickerController = UIImagePickerController()
-		imagePickerController.delegate = self
-		imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-		presentViewController(imagePickerController, animated: true, completion: nil)
+        pickImage(UIImagePickerControllerSourceType.PhotoLibrary)
 	}
 
 	@IBAction func pickImageFromCamera(sender: AnyObject) {
+		pickImage(UIImagePickerControllerSourceType.Camera)
+	}
+
+	func pickImage(sourceType: UIImagePickerControllerSourceType) {
 		let imagePickerController = UIImagePickerController()
 		imagePickerController.delegate = self
-		imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+		imagePickerController.sourceType = sourceType
 		presentViewController(imagePickerController, animated: true, completion: nil)
 	}
 
@@ -199,7 +200,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	}
 
 	func generateMemedImage() -> UIImage {
-		hideNavigationBars()
+        toggleNavigationBarsVisibility(true)
 
 		// Take a snapshot of the screen's memedImage
 		UIGraphicsBeginImageContext(view.frame.size)
@@ -207,17 +208,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 
-		showNavigationBars()
+        toggleNavigationBarsVisibility(false)
 
 		return memedImage
-	}
-
-	func showNavigationBars() {
-		toggleNavigationBarsVisibility(false)
-	}
-
-	func hideNavigationBars() {
-		toggleNavigationBarsVisibility(true)
 	}
 
 	func toggleNavigationBarsVisibility(visible: Bool) {
@@ -235,5 +228,4 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let chooseFontController = segue.destinationViewController as! ChooseFontViewController
         chooseFontController.chooseFontViewDelegate = self
     }
-    
 }
