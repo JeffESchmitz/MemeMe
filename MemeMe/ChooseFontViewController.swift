@@ -10,7 +10,7 @@ import UIKit
 
 class ChooseFontViewController: UITableViewController {
     
-    let fontsAvailable: [String] = ["Apple Color Emoji", "Avenir", "Cochin", "Kailasa", "Menlo", "Palatino", "Papyrus", "Times New Roman", "Zapfino"]
+    let fontsAvailable: [String] = ["Apple Color Emoji", "Avenir", "Cochin", "HelveticaNeue-CondensedBlack", "Kailasa", "Menlo", "Palatino", "Papyrus", "Times New Roman", "Zapfino"]
     var chooseFontViewDelegate: ChooseFontViewProtocol?
     
     override func viewDidLoad() {
