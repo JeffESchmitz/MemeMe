@@ -26,6 +26,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
 		NSStrokeWidthAttributeName : -3.0
 	]
+    
+    var memes: [Meme]!
 
 	// MARK: UIViewController delegate methods
 	override func viewDidLoad() {
@@ -33,6 +35,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
         setTextFieldProperties(topText, displayText: "TOP")
         setTextFieldProperties(bottomText, displayText: "BOTTOM")
+        
+        let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        memes = applicationDelegate.memes
     }
 
     func setTextFieldProperties(textField: UITextField!, displayText: String?) {
