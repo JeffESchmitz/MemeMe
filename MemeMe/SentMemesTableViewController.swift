@@ -10,7 +10,7 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
 
-    let memes = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let sentMemeTableCellId = "SentMemeTableCellId"
     
     override func viewWillAppear(animated: Bool) {
@@ -22,16 +22,15 @@ class SentMemesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memes.count
+        return appDelegate.memes.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(sentMemeTableCellId, forIndexPath: indexPath)
 
-        let meme = memes[indexPath.row]
-        cell.imageView?.image = meme.image
-        let message = "\(meme.topText) \(meme.bottomText)"
-        cell.textLabel?.text = message
+        let meme = appDelegate.memes[indexPath.row]
+        cell.imageView?.image = meme.memedImage
+        cell.textLabel?.text = String(format: "%@ - %@", meme.topText!, meme.bottomText!)
 
         return cell
     }
