@@ -20,7 +20,42 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sec-lQ-x99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="735"/>
+            <point key="canvasLocation" x="61" y="1282"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="SaS-Fz-rqb">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" title="Meme Detail View Controller" id="57Q-pn-0Lt" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MLU-kh-9JT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lkt-er-Kdd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yTn-H7-QHG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="end-qj-aQu" userLabel="Detail Meme Image View">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lkt-er-Kdd" firstAttribute="top" secondItem="end-qj-aQu" secondAttribute="bottom" id="Dbf-P3-Lju"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="end-qj-aQu" secondAttribute="trailing" constant="-20" id="MWq-yX-MeB"/>
+                            <constraint firstItem="end-qj-aQu" firstAttribute="leading" secondItem="yTn-H7-QHG" secondAttribute="leadingMargin" constant="-20" id="V89-iK-eeh"/>
+                            <constraint firstItem="end-qj-aQu" firstAttribute="top" secondItem="MLU-kh-9JT" secondAttribute="bottom" id="aoI-XR-z5n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Stt-Si-Qxj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="7Jw-Hc-EcL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailMemeImageView" destination="end-qj-aQu" id="lgz-Dl-wWy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IdN-ep-Aea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1186" y="1476"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9IM-93-m3k">
@@ -38,7 +73,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHU-Cp-4xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3037" y="1186"/>
+            <point key="canvasLocation" x="-2897" y="1502"/>
         </scene>
         <!--Sent Memes Table Navigation Controller-->
         <scene sceneID="dW8-Hq-yEu">
@@ -55,22 +90,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFW-nh-DOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2049" y="754"/>
+            <point key="canvasLocation" x="-2037" y="994"/>
         </scene>
         <!--Sent Memes Table View Controller-->
         <scene sceneID="9ld-8c-JbW">
             <objects>
                 <tableViewController title="Sent Memes Table View Controller" id="Qgf-7p-3Ix" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="hCJ-2O-CH4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="hCJ-2O-CH4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCellId" rowHeight="100" id="wIe-y0-FcK">
-                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCellId" rowHeight="110" id="wIe-y0-FcK">
+                                <rect key="frame" x="0.0" y="92" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIe-y0-FcK" id="B3a-JN-sGT">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -90,7 +125,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEf-oD-lPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1198" y="754"/>
+            <point key="canvasLocation" x="-1186" y="720"/>
         </scene>
         <!--Sent Memes Collection Navigation Controller-->
         <scene sceneID="jBm-if-G99">
@@ -107,7 +142,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTS-uk-hNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2013" y="1605"/>
+            <point key="canvasLocation" x="-2017" y="2087"/>
         </scene>
         <!--Sent Memes Collection View Controller-->
         <scene sceneID="ci6-xK-TVP">
@@ -142,12 +177,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hP9-i7-dAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1198" y="1605"/>
+            <point key="canvasLocation" x="-1186" y="2247"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="2Ty-UW-dZt">
             <objects>
-                <viewController id="mjZ-Pf-yck" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="mjZ-Pf-yck" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jF9-tG-DoT"/>
                         <viewControllerLayoutGuide type="bottom" id="ws7-6u-BxW"/>
@@ -241,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zw7-nk-tlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528" y="735"/>
+            <point key="canvasLocation" x="788" y="1282"/>
         </scene>
         <!--Choose Font View Controller-->
         <scene sceneID="FGm-gt-XEl">
@@ -280,7 +315,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaH-sA-Qkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="735"/>
+            <point key="canvasLocation" x="1524" y="1282"/>
         </scene>
     </scenes>
     <resources>

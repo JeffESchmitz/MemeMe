@@ -28,6 +28,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	]
     
     var memes: [Meme]!
+    var meme: Meme!
+    var editedMemeIndex: Int?
 
 	// MARK: UIViewController delegate methods
 	override func viewDidLoad() {
