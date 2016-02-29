@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="end-qj-aQu" userLabel="Detail Meme Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="end-qj-aQu" userLabel="Detail Meme Image View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
                         </subviews>
@@ -47,7 +47,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Stt-Si-Qxj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="7Jw-Hc-EcL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="7Jw-Hc-EcL">
+                            <connections>
+                                <action selector="editMemeButton:" destination="57Q-pn-0Lt" id="lgx-Ur-Ja2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailMemeImageView" destination="end-qj-aQu" id="lgz-Dl-wWy"/>

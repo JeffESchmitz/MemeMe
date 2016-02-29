@@ -30,6 +30,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     var memes: [Meme]!
     var meme: Meme!
     var editedMemeIndex: Int?
+	let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
 
 	// MARK: UIViewController delegate methods
 	override func viewDidLoad() {
@@ -38,8 +39,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         setTextFieldProperties(topText, displayText: "TOP")
         setTextFieldProperties(bottomText, displayText: "BOTTOM")
         
-        let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        memes = applicationDelegate.memes
+//        let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        memes = appDelegate.memes
     }
 
     func setTextFieldProperties(textField: UITextField!, displayText: String?) {
@@ -52,9 +53,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 
+        if meme != nil {
+            imagePickerView.image = meme.image
+            topText.text = meme.topText
+            bottomText.text = meme.bottomText
+        }
+
         shareButton.enabled = imagePickerView.image != nil
         cancelButton.enabled = imagePickerView.image != nil
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        
 		subscribeToKeyboardNotifications()
 		UIApplication.sharedApplication().statusBarHidden = true
 	}
@@ -202,8 +210,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
 		let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: pickerImage, memedImage: memedImage)
 
-		// Add it to the memes array in the Application Delegate
-		(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+		// Add or edit existing meme to the memes array in the Application Delegate
+//        let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+		if editedMemeIndex != nil {
+            appDelegate.memes[editedMemeIndex!] = meme
+        } else {
+            appDelegate.memes.append(meme)
+        }
 	}
 
 	func generateMemedImage() -> UIImage {

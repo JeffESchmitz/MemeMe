@@ -20,28 +20,15 @@ class MemeDetailViewController: UIViewController {
 
         detailMemeImageView!.image = meme.memedImage
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     @IBAction func editMemeButton(sender: AnyObject) {
         let memeEditorViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         memeEditorViewController.meme = meme
         memeEditorViewController.editedMemeIndex = editedMemeIndex
         
+        let navigationController = UINavigationController(rootViewController: memeEditorViewController)
+        presentViewController(navigationController, animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
