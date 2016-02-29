@@ -39,7 +39,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         setTextFieldProperties(topText, displayText: "TOP")
         setTextFieldProperties(bottomText, displayText: "BOTTOM")
         
-//        let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         memes = appDelegate.memes
     }
 
@@ -211,7 +210,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		let meme = Meme(topText: topText.text, bottomText: bottomText.text, image: pickerImage, memedImage: memedImage)
 
 		// Add or edit existing meme to the memes array in the Application Delegate
-//        let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
 		if editedMemeIndex != nil {
             appDelegate.memes[editedMemeIndex!] = meme
         } else {
