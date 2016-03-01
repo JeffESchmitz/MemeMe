@@ -8,10 +8,11 @@
 
 import UIKit
 
+private let sentMemeTableCellId = "SentMemeTableCellId"
+
 class SentMemesTableViewController: UITableViewController {
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    let sentMemeTableCellId = "SentMemeTableCellId"
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
