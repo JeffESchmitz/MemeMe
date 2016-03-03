@@ -22,7 +22,7 @@ class MemeDetailViewController: UIViewController {
     }
     
     @IBAction func editMemeButton(sender: AnyObject) {
-        let memeEditorViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        let memeEditorViewController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         memeEditorViewController.meme = meme
         memeEditorViewController.editedMemeIndex = editedMemeIndex
         
