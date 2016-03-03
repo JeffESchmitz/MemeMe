@@ -293,6 +293,7 @@
                         <outlet property="cancelButton" destination="QFt-Um-ahl" id="ZfB-lS-ew2"/>
                         <outlet property="imagePickerView" destination="Gox-Vb-2Dw" id="xz0-8J-Wks"/>
                         <outlet property="shareButton" destination="EU7-Ch-PUy" id="Mox-OP-7Lh"/>
+                        <outlet property="toolBar" destination="NSo-FS-b3F" id="2UM-D2-85X"/>
                         <outlet property="topText" destination="azC-x4-PgD" id="S5i-AT-SsL"/>
                     </connections>
                 </viewController>

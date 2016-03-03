@@ -19,7 +19,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	@IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-
+    @IBOutlet weak var toolBar: UIToolbar!
+    
 	let memeTextAttributes = [
 		NSStrokeColorAttributeName : UIColor.blackColor(),
 		NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -163,24 +164,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		return true
 	}
 
+    // subscribe (wire-up) this viewcontroller to keyboard notifications.
 	func subscribeToKeyboardNotifications() {
-		NSNotificationCenter
-			.defaultCenter()
-			.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-
-		NSNotificationCenter
-			.defaultCenter()
-			.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 	}
 
+    // unsubscribes from notifications so when view disappears, notifications are no longer subscribed to this viewcontroller.
 	func unsubscribeFromKeyboardNotifications() {
-		NSNotificationCenter
-			.defaultCenter()
-			.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-
-		NSNotificationCenter
-			.defaultCenter()
-			.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
 	}
 
 	func keyboardWillShow(notification: NSNotification) {
@@ -233,7 +226,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
 	func toggleNavigationBarsVisibility(visible: Bool) {
 		navigationController?.setNavigationBarHidden(visible, animated: true)
-		navigationController?.setToolbarHidden(visible, animated: true)
+        toolBar.hidden = visible;
+        
 	}
     
     // MARK: ChooseFontViewProtocol delegate method
