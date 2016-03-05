@@ -75,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95518CF91C8B919600C6BE1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95EF01AF1C85DA3100412FD6 /* SentMemeCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		957F7F701C4D10F100BE5E50 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +104,7 @@
 		957F7F7B1C4D10F100BE5E50 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				95518CF91C8B919600C6BE1F /* View */,
 				95B3B3961C68D5FE005562C3 /* Models */,
 				95F487FC1C68BD4B003A541B /* ViewControllers */,
 				957F7F7C1C4D10F100BE5E50 /* AppDelegate.swift */,
@@ -103,7 +112,6 @@
 				957F7F831C4D10F100BE5E50 /* Assets.xcassets */,
 				957F7F851C4D10F100BE5E50 /* LaunchScreen.storyboard */,
 				957F7F881C4D10F100BE5E50 /* Info.plist */,
-				95EF01AF1C85DA3100412FD6 /* SentMemeCollectionViewCell.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";

@@ -186,6 +186,14 @@
                             <outlet property="delegate" destination="5hU-6n-rNC" id="vZi-ZL-kdu"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CKG-a1-rqU"/>
+                        <barButtonItem systemItem="trash" id="0fB-MV-sqx">
+                            <connections>
+                                <action selector="deleteCells:" destination="5hU-6n-rNC" id="vuf-pF-SaS"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Sent Memes" id="x2f-iz-NlD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sUo-tn-pGH">
                             <connections>
@@ -193,6 +201,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="flowLayout" destination="Jr6-AP-Z9f" id="UhW-kM-rop"/>
                     </connections>
