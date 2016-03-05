@@ -11,7 +11,6 @@ import Foundation
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ChooseFontViewProtocol
 {
-
 	@IBOutlet weak var imagePickerView: UIImageView!
 	@IBOutlet weak var albumButton: UIBarButtonItem!
 	@IBOutlet weak var cameraButton: UIBarButtonItem!

@@ -15,11 +15,13 @@ class ChooseFontViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FontCell")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         tableView.reloadData()
     }
     
