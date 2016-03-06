@@ -273,7 +273,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Gox-Vb-2Dw" secondAttribute="trailing" constant="-20" id="EGv-Fh-yj5"/>
                             <constraint firstItem="Hbo-ZB-1xq" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="G0n-n4-OyF"/>
                             <constraint firstItem="Gox-Vb-2Dw" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leadingMargin" constant="-20" id="LCZ-fO-dx5"/>
-                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Hbo-ZB-1xq" secondAttribute="bottom" constant="50" id="LNL-m6-0eY"/>
+                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Hbo-ZB-1xq" secondAttribute="bottom" constant="40" id="LNL-m6-0eY"/>
                             <constraint firstItem="azC-x4-PgD" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="Smr-7Z-UeT"/>
                             <constraint firstItem="ws7-6u-BxW" firstAttribute="top" secondItem="NSo-FS-b3F" secondAttribute="bottom" id="ada-fA-tOe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NSo-FS-b3F" secondAttribute="trailing" constant="-20" id="g5c-ex-56P"/>

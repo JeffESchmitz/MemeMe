@@ -177,7 +177,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
 	func keyboardWillShow(notification: NSNotification) {
 		if bottomText.isFirstResponder() {
-			view.frame.origin.y = getKeyboardHeight(notification) * -1
+            toolBar.hidden = true
+            let keyboardHeight = (getKeyboardHeight(notification) - 40) * -1
+            view.frame.origin.y = keyboardHeight
 		}
 	}
 
@@ -186,9 +188,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
 		return keyboardSize.CGRectValue().height
 	}
-
+	
     func keyboardWillHide(notification: NSNotification) {
 		if bottomText.isFirstResponder() {
+            toolBar.hidden = false
 			view.frame.origin.y = 0
 		}
 	}
