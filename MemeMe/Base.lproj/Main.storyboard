@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="end-qj-aQu" userLabel="Detail Meme Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="end-qj-aQu" userLabel="Detail Meme Image View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
                         </subviews>
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIe-y0-FcK" id="B3a-JN-sGT">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -249,14 +249,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-Vb-2Dw">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azC-x4-PgD" userLabel="Top Text Field">
-                                <rect key="frame" x="0.0" y="100" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azC-x4-PgD" userLabel="Top Text Field">
+                                <rect key="frame" x="0.0" y="100" width="600" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-ZB-1xq" userLabel="Bottom Text Field">
-                                <rect key="frame" x="0.0" y="476" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-ZB-1xq" userLabel="Bottom Text Field">
+                                <rect key="frame" x="0.0" y="499" width="600" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -264,23 +264,19 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="azC-x4-PgD" secondAttribute="trailing" constant="-20" id="0Uv-aF-OqX"/>
-                            <constraint firstItem="NSo-FS-b3F" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leadingMargin" constant="-20" id="1Bv-NG-sRj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hbo-ZB-1xq" secondAttribute="trailing" constant="-20" id="4Vu-zH-lY5"/>
-                            <constraint firstItem="azC-x4-PgD" firstAttribute="top" secondItem="jF9-tG-DoT" secondAttribute="bottom" constant="36" id="5Ve-Zw-9Oo"/>
-                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="top" secondItem="jF9-tG-DoT" secondAttribute="bottom" id="7it-Ak-k7X"/>
-                            <constraint firstItem="azC-x4-PgD" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leadingMargin" constant="-20" id="DvN-sh-1Pm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gox-Vb-2Dw" secondAttribute="trailing" constant="-20" id="EGv-Fh-yj5"/>
-                            <constraint firstItem="Hbo-ZB-1xq" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="G0n-n4-OyF"/>
-                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leadingMargin" constant="-20" id="LCZ-fO-dx5"/>
-                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Hbo-ZB-1xq" secondAttribute="bottom" constant="40" id="LNL-m6-0eY"/>
-                            <constraint firstItem="azC-x4-PgD" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="Smr-7Z-UeT"/>
-                            <constraint firstItem="ws7-6u-BxW" firstAttribute="top" secondItem="NSo-FS-b3F" secondAttribute="bottom" id="ada-fA-tOe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NSo-FS-b3F" secondAttribute="trailing" constant="-20" id="g5c-ex-56P"/>
-                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Gox-Vb-2Dw" secondAttribute="bottom" id="h47-TU-x0k"/>
-                            <constraint firstItem="Hbo-ZB-1xq" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leadingMargin" constant="-20" id="nCQ-JZ-ndP"/>
-                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="ssZ-ii-IQ0"/>
-                            <constraint firstItem="NSo-FS-b3F" firstAttribute="centerX" secondItem="QbV-K2-P1q" secondAttribute="centerX" id="xVq-kS-sij"/>
+                            <constraint firstAttribute="trailing" secondItem="Gox-Vb-2Dw" secondAttribute="trailing" id="0Kh-Tx-2wZ"/>
+                            <constraint firstItem="azC-x4-PgD" firstAttribute="top" secondItem="jF9-tG-DoT" secondAttribute="bottom" constant="36" id="0Pr-Dc-el4"/>
+                            <constraint firstItem="Hbo-ZB-1xq" firstAttribute="leading" secondItem="azC-x4-PgD" secondAttribute="leading" id="2v3-ui-1c4"/>
+                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Hbo-ZB-1xq" secondAttribute="bottom" constant="40" id="Gei-kd-Gru"/>
+                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="leading" secondItem="QbV-K2-P1q" secondAttribute="leading" id="J2P-Gs-0Zk"/>
+                            <constraint firstItem="Hbo-ZB-1xq" firstAttribute="leading" secondItem="NSo-FS-b3F" secondAttribute="leading" id="Jb8-mF-UxA"/>
+                            <constraint firstItem="NSo-FS-b3F" firstAttribute="bottom" secondItem="ws7-6u-BxW" secondAttribute="top" id="Pb2-FO-wSL"/>
+                            <constraint firstItem="NSo-FS-b3F" firstAttribute="top" secondItem="Gox-Vb-2Dw" secondAttribute="bottom" id="dYe-aW-j3r"/>
+                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="top" secondItem="jF9-tG-DoT" secondAttribute="bottom" id="gJW-f5-w3n"/>
+                            <constraint firstItem="Hbo-ZB-1xq" firstAttribute="trailing" secondItem="azC-x4-PgD" secondAttribute="trailing" id="jy6-EJ-EgV"/>
+                            <constraint firstItem="Gox-Vb-2Dw" firstAttribute="trailing" secondItem="azC-x4-PgD" secondAttribute="trailing" id="q4c-ca-fEz"/>
+                            <constraint firstItem="azC-x4-PgD" firstAttribute="leading" secondItem="Gox-Vb-2Dw" secondAttribute="leading" id="rzY-jt-EAZ"/>
+                            <constraint firstItem="NSo-FS-b3F" firstAttribute="trailing" secondItem="Hbo-ZB-1xq" secondAttribute="trailing" id="s13-Oc-GUM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HCK-Mb-idd">
@@ -334,7 +330,7 @@
                                 <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wF0-IH-CFy" id="TNX-tc-kgG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
