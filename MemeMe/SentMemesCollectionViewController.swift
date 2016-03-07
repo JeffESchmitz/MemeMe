@@ -90,10 +90,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
     // MARK: Collection group delete functionality taken from Ravi Shankar's blog - UICollectionViewDemo in Swift - http://rshankar.com/uicollectionview-demo-in-swift/
     @IBAction func deleteCells(sender: AnyObject) {
         if let indexpaths = collectionView?.indexPathsForSelectedItems() {
+            var memesToDeleteIndexes:[Int] = []
             for item in indexpaths {
                 collectionView?.deselectItemAtIndexPath(item, animated: true)
-                appDelegate.memes.removeAtIndex(item.item)
+                memesToDeleteIndexes.append(item.item)
             }
+            
+            memesToDeleteIndexes.sortInPlace(>)
+
+            for index in memesToDeleteIndexes {
+               appDelegate.memes.removeAtIndex(index)
+            }
+            
             collectionView?.deleteItemsAtIndexPaths(indexpaths)
         }
     }
