@@ -39,6 +39,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         setTextFieldProperties(topText, displayText: "TOP")
         setTextFieldProperties(bottomText, displayText: "BOTTOM")
         
+        if meme != nil {
+            imagePickerView.image = meme.image
+            topText.text = meme.topText
+            bottomText.text = meme.bottomText
+        }
+        
         memes = appDelegate.memes
     }
 
@@ -52,11 +58,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 
-        if meme != nil {
-            imagePickerView.image = meme.image
-            topText.text = meme.topText
-            bottomText.text = meme.bottomText
-        }
 
         shareButton.enabled = imagePickerView.image != nil
         cancelButton.enabled = imagePickerView.image != nil

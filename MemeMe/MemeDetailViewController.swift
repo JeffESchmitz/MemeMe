@@ -12,12 +12,17 @@ class MemeDetailViewController: UIViewController {
 
     @IBOutlet weak var detailMemeImageView: UIImageView!
     
-    var meme : Meme!
+    private var meme : Meme!
     var editedMemeIndex: Int?
-    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        meme = appDelegate.memes[editedMemeIndex!]
         detailMemeImageView!.image = meme.memedImage
     }
     

@@ -61,7 +61,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
             highlightCell(indexPath, flag: true)
         } else {
             let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-            detailController.meme = appDelegate.memes[indexPath.row]
             detailController.editedMemeIndex = indexPath.row
             navigationController?.pushViewController(detailController, animated: true)
         }
@@ -93,7 +92,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         if let indexpaths = collectionView?.indexPathsForSelectedItems() {
             for item in indexpaths {
                 collectionView?.deselectItemAtIndexPath(item, animated: true)
-                appDelegate.memes.removeAtIndex(item.row)
+                appDelegate.memes.removeAtIndex(item.item)
             }
             collectionView?.deleteItemsAtIndexPaths(indexpaths)
         }
