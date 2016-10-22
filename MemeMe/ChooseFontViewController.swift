@@ -8,6 +8,11 @@
 
 import UIKit
 
+// This protocol defines a method that will be implemented in the MemeEditorViewController to pass info of what font was selected in this table.
+protocol ChooseFontViewProtocol {
+    func selectedFont(font: String)
+}
+
 class ChooseFontViewController: UITableViewController {
     
     let fontsAvailable: [String] = ["Apple Color Emoji", "Avenir", "Cochin", "HelveticaNeue-CondensedBlack", "Kailasa", "Menlo", "Palatino", "Papyrus", "Times New Roman", "Zapfino"]
@@ -50,9 +55,4 @@ class ChooseFontViewController: UITableViewController {
         chooseFontViewDelegate?.selectedFont(font)
         closeViewController()
     }
-}
-
-// This protocol defines a method that will be implemented in the MemeEditorViewController to pass info of what font was selected in this table.
-protocol ChooseFontViewProtocol {
-    func selectedFont(font: String)
 }
