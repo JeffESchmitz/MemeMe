@@ -14,7 +14,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,84 +25,84 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSizeMake(width, height)
+        flowLayout.itemSize = CGSize(width: width, height: height)
         
-        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.leftBarButtonItem = editButtonItem
         navigationController?.setToolbarHidden(true, animated: true)
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         collectionView!.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appDelegate.memes.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SentMemeCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SentMemeCollectionViewCell
         
         // Configure the cell
         let meme = appDelegate.memes[indexPath.row]
         
-        cell.memeImageView.contentMode = .ScaleAspectFit
+        cell.memeImageView.contentMode = .scaleAspectFit
         cell.memeImageView.clipsToBounds = true
         cell.memeImageView.image = meme.memedImage
         
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if editing {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if isEditing {
             highlightCell(indexPath, flag: true)
         } else {
-            let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+            let detailController = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
             detailController.editedMemeIndex = indexPath.row
             navigationController?.pushViewController(detailController, animated: true)
         }
     }
     
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         highlightCell(indexPath, flag: false)
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
         collectionView?.allowsMultipleSelection = editing
         navigationController?.setToolbarHidden(!editing, animated: true)
     }
     
-    func highlightCell(indexPath: NSIndexPath, flag: Bool) {
-        let cell = collectionView?.cellForItemAtIndexPath(indexPath)
+    func highlightCell(_ indexPath: IndexPath, flag: Bool) {
+        let cell = collectionView?.cellForItem(at: indexPath)
         
         if flag {
-            cell?.contentView.backgroundColor = UIColor.redColor()
+            cell?.contentView.backgroundColor = UIColor.red
         } else {
-            cell?.contentView.backgroundColor = UIColor.clearColor()
+            cell?.contentView.backgroundColor = UIColor.clear
         }
     }
     
     // MARK: Collection group delete functionality taken from Ravi Shankar's blog - UICollectionViewDemo in Swift - http://rshankar.com/uicollectionview-demo-in-swift/
-    @IBAction func deleteCells(sender: AnyObject) {
-        if let indexpaths = collectionView?.indexPathsForSelectedItems() {
+    @IBAction func deleteCells(_ sender: AnyObject) {
+        if let indexpaths = collectionView?.indexPathsForSelectedItems {
             var memesToDeleteIndexes:[Int] = []
             for item in indexpaths {
-                collectionView?.deselectItemAtIndexPath(item, animated: true)
+                collectionView?.deselectItem(at: item, animated: true)
                 memesToDeleteIndexes.append(item.item)
             }
             
-            memesToDeleteIndexes.sortInPlace(>)
+            memesToDeleteIndexes.sort(by: >)
 
             for index in memesToDeleteIndexes {
-               appDelegate.memes.removeAtIndex(index)
+               appDelegate.memes.remove(at: index)
             }
             
-            collectionView?.deleteItemsAtIndexPaths(indexpaths)
+            collectionView?.deleteItems(at: indexpaths)
         }
     }
 }

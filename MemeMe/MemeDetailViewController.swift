@@ -12,27 +12,27 @@ class MemeDetailViewController: UIViewController {
 
     @IBOutlet weak var detailMemeImageView: UIImageView!
     
-    private var meme : Meme!
+    fileprivate var meme : Meme!
     var editedMemeIndex: Int?
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         meme = appDelegate.memes[editedMemeIndex!]
         detailMemeImageView!.image = meme.memedImage
     }
     
-    @IBAction func editMemeButton(sender: AnyObject) {
-        let memeEditorViewController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+    @IBAction func editMemeButton(_ sender: AnyObject) {
+        let memeEditorViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         memeEditorViewController.meme = meme
         memeEditorViewController.editedMemeIndex = editedMemeIndex
         
         let navigationController = UINavigationController(rootViewController: memeEditorViewController)
-        presentViewController(navigationController, animated: true, completion: nil)
+        present(navigationController, animated: true, completion: nil)
     }
 
 
