@@ -195,6 +195,7 @@
 				TargetAttributes = {
 					957F7F781C4D10F100BE5E50 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3Q3NT65HWY;
 						LastSwiftMigration = 0820;
 					};
 					957F7F8C1C4D10F100BE5E50 = {
@@ -391,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3Q3NT65HWY;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefume.MemeMe;
@@ -403,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3Q3NT65HWY;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefume.MemeMe;
